@@ -1,5 +1,5 @@
 # IISERM_pc
-IISER Mohali App for pc, built on electron!
+Unofficial IISER Mohali App for pc, built on electron!
 
 # Install Right Now!
 ## Windows users
@@ -24,3 +24,7 @@ npm i -g @electron-forge/cli
 npm start
 ```
 4. Use the app 😊
+
+
+## IISER-M App for Android
+Also download the Android app from [here](https://github.com/DhruvaSambrani/IISER-Android/wiki#install-the-app-now-)
