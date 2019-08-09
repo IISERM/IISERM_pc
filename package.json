@@ -1,0 +1,52 @@
+{
+  "name": "iiserm_pc",
+  "version": "1.0.0",
+  "description": "Unofficial IISER-M App for pc",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "test": "none",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "author": "Dhruva Sambrani",
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.43",
+    "@electron-forge/maker-deb": "^6.0.0-beta.43",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.43",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.43",
+    "@electron-forge/maker-zip": "^6.0.0-beta.43",
+    "electron": "^6.0.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "iiserm_pc"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
