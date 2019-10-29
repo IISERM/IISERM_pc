@@ -2,25 +2,58 @@
   "name": "iiserm_pc",
   "version": "1.0.0",
   "description": "Unofficial IISER-M App for pc",
-  "main": "src/index.js",
+  "main": "src/main/app.js",
   "scripts": {
     "start": "electron-forge start",
     "test": "none",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "postinstall": "install-app-deps",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
-  "author": "Dhruva Sambrani",
+  "author": "Dhruva Sambrani<dhruvasambrani19@gmail.com>",
   "license": "MIT",
+  "build": {
+    "appId": "iisermpc",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    }
+  },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.43",
-    "@electron-forge/maker-deb": "^6.0.0-beta.43",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.43",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.43",
-    "@electron-forge/maker-zip": "^6.0.0-beta.43",
-    "electron": "^6.0.1"
+    "@electron-forge/cli": "^6.0.0-beta.45",
+    "@electron-forge/maker-deb": "^6.0.0-beta.45",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.45",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.45",
+    "@electron-forge/maker-zip": "^6.0.0-beta.45",
+    "electron": "^6.1.0",
+    "electron-builder": "^21.2.0"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "dpkg": "^1.0.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-store": "^5.0.0"
   },
   "config": {
     "forge": {

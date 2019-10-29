@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Planner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+    body{
+        background-color: #37474f;
+        padding: 0px;
+    }
+    .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    @media screen and (max-width: 600px) {
+        .col-25, .col-75, input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+    h3{
+        color: #ffffff;
+    }
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #78909c;
+        opacity: 1; /* Firefox */
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: #78909c;
+    }
+    ::-ms-input-placeholder { /* Microsoft Edge */
+        color: #78909c;
+    }
+    </style>
+</head>
+<body>
+    <h3 id="header" class="center-align">Sign-in</h3>
+    <div id="signinform" class="container">
+        <div class="row">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="usnm" type="email">
+                    <label for="usnm">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="pswd" type="password">
+                    <label for="pswd">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <button id="signinbtn" class="btn-large waves-effect waves-dark" style="float:right;" onclick="signin()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div id="eventsform" class="container" style="display:none;">
+        <div class="row">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="title" type="text">
+                    <label for="title">Title</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="desc" class="materialize-textarea" placeholder="This should be an abstract/plot/aim of the event. Do not add Time and location info"></textarea>
+                    <label for="desc">Description</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="loc" type="text">
+                    <label for="loc">Location</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="date" type="text" class="datepicker" onfocus="M.Datepicker.getInstance(document.getElementById('date')).open()">
+                    <label for="date">Date</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="time" type="text" class="timepicker" onselect="M.Timepicker.getInstance(document.getElementById('time')).open()">
+                    <label for="time">Time</label>
+                </div>
+            </div>
+            <div class="row">
+                <button id="submit-btn" class="btn-large waves-effect waves-light" style="float:right;" onclick="submiter()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div id="finalActions" class="container" style="display:none; justify-content:space-between;">
+            <a id="lh" class="waves-effect waves-light btn-large " target="_blank"><i class="material-icons left">bookmark</i>Book LH</a>
+            <a id="app" class="waves-effect waves-light btn-large " target="_blank"><i class="material-icons left">android</i>Add to App</a>
+            <a id="email" class="waves-effect waves-light btn-large " target="_blank"><i class="material-icons left">email</i>Send Email</a>
+            <a id="wa" class="waves-effect waves-light btn-large " target="_blank"><i class="material-icons left">chat</i>Send to Whatsapp</a>
+    </div>
+
+    <!-- Firebase JS SDK -->
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+    <script src="js/convenerUtilScripts.js"></script>
+</body>
+</html>
