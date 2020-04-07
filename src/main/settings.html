@@ -1,114 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-            <meta charset="utf-8">
-            <title>Settings</title>
-            <link rel="stylesheet" href="../css/photon.min.css">
-            <style>
-                /* Customize the label (the container) */
-                .container {
-                    display: block;
-                    position: relative;
-                    padding-left: 35px;
-                    margin-bottom: 12px;
-                    cursor: pointer;
-                    font-size: 15px;
-                    -webkit-user-select: none;
-                    -moz-user-select: none;
-                    -ms-user-select: none;
-                    user-select: none;
-                }
-                /* Hide the browser's default checkbox */
-                .container input {
-                    position: absolute;
-                    opacity: 0;
-                    cursor: pointer;
-                    height: 0;
-                    width: 0;
-                }
-                /* Create a custom checkbox */
-                .checkmark {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 20px;
-                    width: 20px;
-                    background-color: #eee;
-                }
-
-                /* On mouse-over, add a grey background color */
-                .container:hover input ~ .checkmark {
-                    background-color: #ccc;
-                }
-
-                /* When the checkbox is checked, add a blue background */
-                .container input:checked ~ .checkmark {
-                    background-color: #2196F3;
-                }
-
-                /* Create the checkmark/indicator (hidden when not checked) */
-                .checkmark:after {
-                    content: "";
-                    position: absolute;
-                    display: none;
-                }
-
-                /* Show the checkmark when checked */
-                .container input:checked ~ .checkmark:after {
-                    display: block;
-                }
-
-                /* Style the checkmark/indicator */
-                .container .checkmark:after {
-                    left: 6px;
-                    top: 2px;
-                    width: 5px;
-                    height: 10px;
-                    border: solid white;
-                    border-width: 0 3px 3px 0;
-                    -webkit-transform: rotate(45deg);
-                    -ms-transform: rotate(45deg);
-                    transform: rotate(45deg);
-                }
-            </style>
-    </head>
-    <body style="padding: 16px;">
-        <form onsubmit="save()" target="_blank">
-            <label class="container">Automatically Sign-in to Services
-                <input id="mainCheck" type="checkbox" onchange="onChange()" >
-                <span class="checkmark"></span>
-            </label>
-            <div id="settings" style="display:none;padding: 16px;">
-                <div class="form-group">
-                    <label>Master Password</label>
-                    <input id="master" type="text" class="form-control" placeholder="Master Password" required>
-                </div>
-                <div class="form-group">
-                    <label>Roll Number</label>
-                    <input id="roll" type="text" class="form-control" placeholder="Roll No">
-                </div>
-                <div class="form-group">
-                    <label>Moodle Password</label>
-                    <input id="mpw" type="text" class="form-control" placeholder="Moodle Password">
-                </div>
-                <div class="form-group">
-                    <label>ERP Password</label>
-                    <input id="epw" type="text" class="form-control" placeholder="ERP Password">
-                </div>
-                <div class="form-group">
-                    <label>Koha Password</label>
-                    <input id="kpw" type="text" class="form-control" placeholder="Koha Password">
-                </div>
-                <div class="form-group">
-                    <label>Webmail Password</label>
-                    <input id="wpw" type="text" class="form-control" placeholder="Webmail Password">
-                </div>
+<head>
+    <meta charset="utf-8">
+    <title>Settings</title>
+</head>
+<body style="padding: 16px;">
+    <form onsubmit="save()" target="_blank">
+        <label >Automatically Sign-in to Services
+            <input id="mainCheck" type="checkbox" onchange="onChange()" >
+            <span ></span>
+        </label>
+        <div id="settings">
+            <div >
+                <label>Master Password</label>
+                <input id="master" type="text"  placeholder="Master Password" required>
             </div>
-            <div class="form-actions">
-                <input type="reset" id="reset" class="btn btn-form btn-default" value="Reset to Defaults">
-                <input type="submit" id="submit" class="btn btn-form btn-primary" value="Save Settings">
+            <div >
+                <label>Roll Number</label>
+                <input id="roll" type="text"  placeholder="Roll No">
             </div>
-        </form>
-        <script src="js/settings.js" charset="utf-8"></script>
-    </body>
+            <div >
+                <label>Moodle Password</label>
+                <input id="mpw" type="text"  placeholder="Moodle Password">
+            </div>
+            <div >
+                <label>ERP Password</label>
+                <input id="epw" type="text"  placeholder="ERP Password">
+            </div>
+            <div >
+                <label>Koha Password</label>
+                <input id="kpw" type="text"  placeholder="Koha Password">
+            </div>
+            <div >
+                <label>Webmail Password</label>
+                <input id="wpw" type="text"  placeholder="Webmail Password">
+            </div>
+        </div>
+        <div >
+            <input type="reset" id="reset" value="Reset to Defaults">
+            <input type="submit" id="submit" value="Save Settings">
+        </div>
+    </form>
+    <script src="js/settings.js" charset="utf-8"></script>
+</body>
 </html>

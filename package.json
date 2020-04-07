@@ -5,10 +5,6 @@
   "main": "src/main/app.js",
   "scripts": {
     "start": "electron-forge start",
-    "test": "none",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "postinstall": "install-app-deps",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
@@ -42,44 +38,13 @@
     }
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.48",
-    "@electron-forge/maker-deb": "^6.0.0-beta.48",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.48",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.48",
-    "@electron-forge/maker-zip": "^6.0.0-beta.48",
     "electron": "^6.1.7",
     "electron-builder": "^21.2.0"
   },
   "dependencies": {
     "dpkg": "^1.0.0",
+    "electron-photon": "^1.1.6",
     "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^5.1.0"
-  },
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "iiserm_pc"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ]
-    }
   }
 }
