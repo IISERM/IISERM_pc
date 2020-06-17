@@ -1,0 +1,26 @@
+#policy-already-accepted{
+    display: none;
+}
+
+#policy-not-accepted{
+    display: none;
+}
+.ui.fullscreen.scrolling.modal {
+    left: auto !IMPORTANT;
+}
+.ui.fullscreen.modal{
+    left: auto !IMPORTANT;
+}
+
+div#policy-already-accepted {
+    margin: 0 auto;
+    padding: 10px;
+    width: 700px;
+}
+
+div#main-policy {
+    height: 100vh;
+    display: none;
+    background-image: url('../src/usagepolicy/img_bg.jpg');
+    background-repeat: no-repeat;
+}

@@ -1,50 +1,47 @@
 {
-  "name": "iiserm_pc",
-  "version": "1.0.0",
-  "description": "Unofficial IISER-M App for pc",
-  "main": "src/main/app.js",
-  "scripts": {
-    "start": "electron-forge start",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder"
-  },
-  "author": "Dhruva Sambrani<dhruvasambrani19@gmail.com>",
-  "license": "MIT",
-  "build": {
-    "appId": "iisermpc",
-    "dmg": {
-      "contents": [
-        {
-          "x": 110,
-          "y": 150
+    "name": "iiserm_pc",
+    "version": "1.0.0",
+    "description": "Unofficial IISER-M App for pc",
+    "main": "src/main/app.js",
+    "scripts": {
+        "start": "electron .",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder"
+    },
+    "author": "Dhruva Sambrani<dhruvasambrani19@gmail.com>",
+    "productName": "Unofficial IISER-M App",
+    "license": "MIT",
+    "build": {
+        "appId": "com.dhruva.iisermpc",
+        "linux": {
+            "target": [
+                "AppImage",
+                "deb"
+            ],
+            "synopsis": "The Desktop version of the Android App",
+            "category": "Network"
         },
-        {
-          "x": 240,
-          "y": 150,
-          "type": "link",
-          "path": "/Applications"
+        "deb": {
+            "priority": "optional"
+        },
+        "win": {
+            "target": [
+                "NSIS"
+            ],
+            "icon": "build/icon.ico"
+        },
+        "nsis": {
+            "deleteAppDataOnUninstall": "true",
+            "oneClick": "false",
+            "allowToChangeInstallationDirectory": "true"
         }
-      ]
     },
-    "linux": {
-      "target": [
-        "AppImage",
-        "deb"
-      ]
+    "devDependencies": {
+        "electron": "^9.0.3",
+        "electron-builder": "^21.2.0"
     },
-    "win": {
-      "target": "NSIS",
-      "icon": "build/icon.ico"
+    "dependencies": {
+        "dpkg": "^1.0.0",
+        "electron-photon": "^1.1.6"
     }
-  },
-  "devDependencies": {
-    "electron": "^6.1.7",
-    "electron-builder": "^21.2.0"
-  },
-  "dependencies": {
-    "dpkg": "^1.0.0",
-    "electron-photon": "^1.1.6",
-    "electron-squirrel-startup": "^1.0.0",
-    "electron-store": "^5.1.0"
-  }
 }

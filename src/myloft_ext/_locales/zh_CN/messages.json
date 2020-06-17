@@ -1,0 +1,53 @@
+{
+    "add_tags": {
+        "message": "添加标签 ++"
+    },
+    "manifest_description": {
+        "message": "此扩展程序允许您将文章保存到MyLOFT"
+    },
+    "browser_action_title": {
+        "message": "保存到MyLOFT"
+    },
+    "browser_action_save_button": {
+        "message": "保存"
+    },
+    "select_collection": {
+        "message": "搜索并选择一个集合......"
+    },
+    "options_logout_button": {
+        "message": "登出"
+    },
+    "options_login_button": {
+        "message": "登录"
+    },
+    "notification_successfull_login": {
+        "message": "登录成功"
+    },
+    "notification_successfull_login_msg": {
+        "message": "欢迎来到MyLOFT"
+    },
+    "notification_logout_success": {
+        "message": "已成功注销"
+    },
+    "notification_logout_failed": {
+        "message": "注销失败"
+    },
+    "article_success": {
+        "message": "文章已成功添加到MyLOFT"
+    },
+    "article_present": {
+        "message": "文章已经存在"
+    },
+    "something_went_wrong": {
+        "message": "抱歉，出了一些问题。"
+    },
+    "usage_policy_reject":{
+        "message": "请接受使用政策以访问您图书馆的订阅内容"
+    },
+    "please_try_again":{
+        "message": "请再试一次"
+    },
+    "usage_policy_declined":{
+        "message":"政策下降"
+    }
+}

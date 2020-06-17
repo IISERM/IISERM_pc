@@ -1,48 +1,55 @@
-const{app, BrowserWindow, ipcMain, BrowserView, Menu, MenuItem} = require('electron')
+const { app, BrowserWindow, ipcMain, Menu, session } = require('electron')
 const path = require('path')
 
 var mainWindow = null;
-var view = null;
 
 const menu = Menu.buildFromTemplate([
     {
-        label:'Navigation',
-        submenu:[
-            {   label: "Reload",
+        label: 'Navigation',
+        submenu: [
+            {
+                label: "Reload",
                 accelerator: 'CmdOrCtrl+R',
                 click: () => { mainWindow.webContents.send('nav', 'reload') }
             },
-            {   label: "Back",
+            {
+                label: "Back",
                 accelerator: 'CmdOrCtrl+Left',
                 click: () => { mainWindow.webContents.send('nav', 'back') }
             },
-            {   label: "Forward",
+            {
+                label: "Forward",
                 accelerator: 'CmdOrCtrl+Right',
                 click: () => { mainWindow.webContents.send('nav', 'forward') }
             },
-            {type:'separator'},
-            {   label: "Exit",
+            { type: 'separator' },
+            {
+                label: "Exit",
                 accelerator: 'CmdOrCtrl+Q',
                 click: () => { app.quit() }
             }
         ]
     },
     {
-        label:"DevTools",
-        submenu:[
-            {   label: "Open Main DevTools",
+        label: "DevTools",
+        submenu: [
+            {
+                label: "Open Main DevTools",
                 accelerator: 'CmdOrCtrl+Shift+I',
                 click: () => { mainWindow.openDevTools() }
             },
-            {   label: "Open Webview DevTools",
+            {
+                label: "Open Webview DevTools",
                 accelerator: 'F12',
                 click: () => { mainWindow.webContents.send('webview', 'dev') }
             },
-            {   label: "Refresh Main",
+            {
+                label: "Refresh Main",
                 accelerator: 'CmdOrCtrl+Shift+R',
                 click: () => { mainWindow.reload() }
             },
-            {   label: "Clear Cache",
+            {
+                label: "Clear Cache",
                 accelerator: 'CmdOrCtrl+Shift+C',
                 click: () => {
                     mainWindow.webContents.session.clearCache();
@@ -54,18 +61,18 @@ const menu = Menu.buildFromTemplate([
 ])
 
 // Quit when all windows are closed.
-app.on('window-all-closed', function() {
+app.on('window-all-closed', function () {
     if (process.platform != 'darwin') {
         app.quit();
     }
 });
 
-app.on('ready', function() {
-    Menu.setApplicationMenu(null);
+app.on('ready', function () {
+    Menu.setApplicationMenu(menu);
     mainWindow = new BrowserWindow({
         width: 100,
         height: 300,
-        show:false,
+        show: false,
         'min-width': 500,
         'min-height': 200,
         'accept-first-mouse': true,
@@ -75,19 +82,42 @@ app.on('ready', function() {
             webviewTag: true
         }
     });
-    mainWindow.once('ready-to-show', () => {
-        mainWindow.maximize();
-        mainWindow.show();
-    })
 
     mainWindow.loadURL('file://' + __dirname + '/index.html');
 
-    mainWindow.on('closed', function() {
+    mainWindow.once('ready-to-show', () => {
+        mainWindow.maximize();
+        mainWindow.show();
+    });
+
+    mainWindow.on('closed', () => {
         mainWindow = null;
     });
+
+    /*session
+        .defaultSession
+        .loadExtension(path.join(__dirname, "../myloft_ext"))
+        .then(({ id }) => {
+            console.log(id);
+        })*/
 });
 
 app.on('certificate-error', (event, webContents, url, error, certificate, callback) => {
     event.preventDefault();
     callback(true);
 });
+
+ipcMain.on("settings", (event, arg) => {
+    let child = new BrowserWindow({
+        parent: mainWindow,
+        modal: true,
+        show: false,
+        webPreferences: {
+            nodeIntegration: true
+        }
+    });
+    child.loadURL('file://' + __dirname + '/settings.html');
+    child.once('ready-to-show', () => {
+        child.show()
+    });
+})

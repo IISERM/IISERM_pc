@@ -1,0 +1,52 @@
+#myloft_popup_container {
+    margin: 0 auto;
+    height: auto;
+    font-family: Helvetica, Ubuntu, Arial, sans-serif;
+    max-width: 350px;
+    overflow: hidden;
+}
+
+#tagInput tags.tagify {
+    border-radius: 5px;
+}
+
+h3#popup_title {
+    padding: 10px;
+}
+
+div#tagInput {
+    padding: 10px;
+}
+
+div#colInput {
+    padding: 10px;
+}
+
+#colInput .ui.icon.input {
+    width: 100%;
+}
+
+#colInput input.prompt {
+    border-radius: 5px;
+}
+
+#colInput .ui.icon.input {
+    width: 100%;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+#save_section {
+    text-align: right;
+    padding: 10px;
+}
+
+button#saveButton {
+    background: #253a69;
+}
+
+.tagify tag>div>* {
+    max-width: 260px;
+}

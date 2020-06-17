@@ -4,7 +4,7 @@
     <title>Unofficial IISER Mohali App</title>
     <link rel="stylesheet" href="./css/index.css">
   </head>
-  <body>
+  <body onload="openSettings()">
     <ph-window>
       <tool-bar type="header">
         <btn-group type="none" class="pull-right">
@@ -29,9 +29,13 @@
                 <img class="icon" src="../images/wm.png">
                 Webmail
               </nav-item>
-              <nav-item onclick="openPage('http://library.iisermohali.ac.in/cgi-bin/koha/opac-user.pl/')">
+              <nav-item onclick="openPage('https://library.iisermohali.ac.in/cgi-bin/koha/opac-user.pl/')">
                 <img class="icon" src="../images/koha.ico">
                 E-Library
+              </nav-item>
+              <nav-item onclick="openPage('https://app.myloft.xyz/user/login?institute=ck9cardhnit5p0902lqxeg1di')">
+                <img class="icon" src="../images/myloft.ico">
+                MyLOFT
               </nav-item>
               <nav-item onclick="openPage('https://172.16.2.171:7040/hub/login')">
                 <img class="icon" src="../images/jupyter.ico">
@@ -62,6 +66,9 @@
               </nav-item>
               <nav-item onclick="openPage('https://iiserm.github.io/convenerUtil')">
                 Convener's Signin
+              </nav-item>
+              <nav-item onclick="openPage('https://earth.google.com/web/data=Mj8KPQo7CiExbUxMYnJSYVBJd2l2QlFpbFRhZ0xJSlBfRGVpNTV5dUsSFgoUMDQyMTQ5OThBRTEyMUEyNjZERDM')">
+                IISER Map
               </nav-item>
               <!--<nav-item onclick="openSettings()">
                 <nav-item ></nav-item>
