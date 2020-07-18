@@ -1,12 +1,12 @@
 {
     "name": "iiserm_pc",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Unofficial IISER-M App for pc",
     "main": "src/main/app.js",
     "scripts": {
         "start": "electron .",
-        "pack": "electron-builder --dir",
-        "dist": "electron-builder"
+        "dist": "electron-builder",
+        "pack": "electron-builder --dir"
     },
     "author": "Dhruva Sambrani<dhruvasambrani19@gmail.com>",
     "productName": "Unofficial IISER-M App",
@@ -37,7 +37,7 @@
         }
     },
     "devDependencies": {
-        "electron": "^9.0.3",
+        "electron": "^9.1.0",
         "electron-builder": "^21.2.0"
     },
     "dependencies": {

@@ -1,88 +1,93 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Unofficial IISER Mohali App</title>
-    <link rel="stylesheet" href="./css/index.css">
-  </head>
-  <body onload="openSettings()">
-    <ph-window>
-      <tool-bar type="header">
-        <btn-group type="none" class="pull-right">
-          <button class="btn btn-system btn-active" onclick="back()">Back</button>
-          <button class="btn btn-system btn-active" onclick="forward()">Forward</button>
-        </btn-group>
-      </tool-bar>
-      <window-content>
-        <div class="pane-group">
-          <div class="pane-sm sidebar">
-            <nav-group>
-              <h5 class="nav-group-title">Official Services</h5>
-              <nav-item onclick="openPage('http://14.139.227.202/moodle/')">
-                <img class="icon" src="../images/moodle.png">
-                Moodle
-              </nav-item>
-              <nav-item onclick="openPage('https://erp.iisermohali.ac.in/login.action')">
-                <img class="icon" src="../images/erp.ico">
-                ERP
-              </nav-item>
-              <nav-item onclick="openPage('https://210.212.36.70/')">
-                <img class="icon" src="../images/wm.png">
-                Webmail
-              </nav-item>
-              <nav-item onclick="openPage('https://library.iisermohali.ac.in/cgi-bin/koha/opac-user.pl/')">
-                <img class="icon" src="../images/koha.ico">
-                E-Library
-              </nav-item>
-              <nav-item onclick="openPage('https://app.myloft.xyz/user/login?institute=ck9cardhnit5p0902lqxeg1di')">
+
+<head>
+  <title>Unofficial IISER Mohali App</title>
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <ph-window>
+    <tool-bar type="header">
+      <btn-group type="none" class="pull-right">
+        <button class="btn btn-system btn-active" onclick="back()">Back</button>
+        <button class="btn btn-system btn-active" onclick="forward()">Forward</button>
+      </btn-group>
+    </tool-bar>
+    <window-content>
+      <div class="pane-group">
+        <div class="pane-sm sidebar">
+          <nav-group>
+            <h5 class="nav-group-title">Official Services</h5>
+            <nav-item onclick="openPage('http://14.139.227.202/moodle/')">
+              <img class="icon" src="../images/moodle.png">
+              Moodle
+            </nav-item>
+            <nav-item onclick="openPage('https://erp.iisermohali.ac.in/login.action')">
+              <img class="icon" src="../images/erp.ico">
+              ERP
+            </nav-item>
+            <nav-item onclick="openPage('https://210.212.36.70/')">
+              <img class="icon" src="../images/wm.png">
+              Webmail
+            </nav-item>
+            <nav-item onclick="openPage('https://library.iisermohali.ac.in/cgi-bin/koha/opac-user.pl/')">
+              <img class="icon" src="../images/koha.ico">
+              E-Library
+            </nav-item>
+            <!--<nav-item onclick="openPage('https://app.myloft.xyz/user/login?institute=ck9cardhnit5p0902lqxeg1di')">
                 <img class="icon" src="../images/myloft.ico">
                 MyLOFT
-              </nav-item>
-              <nav-item onclick="openPage('https://172.16.2.171:7040/hub/login')">
-                <img class="icon" src="../images/jupyter.ico">
-                Jupyter
-              </nav-item>
-            </nav-group>
-            <nav-group>
-              <h5 class="nav-group-title">Unofficial Services</h5>
-              <nav-item onclick="openPage('https://iiserm.github.io/clubCalendar')">
-                Club Events Calendar
-              </nav-item>
-              <nav-item onclick="openPage('https://iiserm.github.io/acadCalendar')">
-                Academic Calendar
-              </nav-item>
-              <nav-item onclick="openPage('https://drive.google.com/drive/folders/1_zSY8mJgIlGPXUFTQQdyZGaOr1M8WfvK?usp=sharing')">
-                <img class="icon" src="../images/drive.png">
-                Drive Link to Books
-              </nav-item>
-              <nav-item onclick="openPage('https://iiserm.github.io/course_files')">
-                Course Files
-              </nav-item>
-              <nav-item onclick="openPage('https://manthan-iiserm.blogspot.com/')">
-                <img class="icon" src="../images/manthan.svg">
-                Manthan
-              </nav-item>
-              <nav-item onclick="openPage('https://iisermpop.wixsite.com/popculture-iiser-m/')">
-                IISER-M Blog
-              </nav-item>
-              <nav-item onclick="openPage('https://iiserm.github.io/convenerUtil')">
-                Convener's Signin
-              </nav-item>
-              <nav-item onclick="openPage('https://earth.google.com/web/data=Mj8KPQo7CiExbUxMYnJSYVBJd2l2QlFpbFRhZ0xJSlBfRGVpNTV5dUsSFgoUMDQyMTQ5OThBRTEyMUEyNjZERDM')">
-                IISER Map
-              </nav-item>
-              <!--<nav-item onclick="openSettings()">
+              </nav-item>-->
+            <nav-item onclick="openPage('https://172.16.2.171:7040/hub/login')">
+              <img class="icon" src="../images/jupyter.ico">
+              Jupyter
+            </nav-item>
+          </nav-group>
+          <nav-group>
+            <h5 class="nav-group-title">Unofficial Services</h5>
+            <nav-item onclick="openPage('https://iiserm.github.io/clubCalendar')">
+              Club Events Calendar
+            </nav-item>
+            <nav-item onclick="openPage('https://iiserm.github.io/acadCalendar')">
+              Academic Calendar
+            </nav-item>
+            <nav-item
+              onclick="openPage('https://drive.google.com/drive/folders/1_zSY8mJgIlGPXUFTQQdyZGaOr1M8WfvK?usp=sharing')">
+              <img class="icon" src="../images/drive.png">
+              Drive Link to Books
+            </nav-item>
+            <nav-item onclick="openPage('https://iiserm.github.io/course_files')">
+              Course Files
+            </nav-item>
+            <nav-item onclick="openPage('https://manthan-iiserm.blogspot.com/')">
+              <img class="icon" src="../images/manthan.svg">
+              Manthan
+            </nav-item>
+            <nav-item onclick="openPage('https://iisermpop.wixsite.com/popculture-iiser-m/')">
+              IISER-M Blog
+            </nav-item>
+            <nav-item onclick="openPage('https://iiserm.github.io/convenerUtil')">
+              Convener's Signin
+            </nav-item>
+            <nav-item
+              onclick="openPage('https://earth.google.com/web/data=Mj8KPQo7CiExbUxMYnJSYVBJd2l2QlFpbFRhZ0xJSlBfRGVpNTV5dUsSFgoUMDQyMTQ5OThBRTEyMUEyNjZERDM')">
+              IISER Map
+            </nav-item>
+            <!--<nav-item onclick="openSettings()">
                 <nav-item ></nav-item>
                 Settings
               </nav-item>-->
-            </nav-group>
-          </div>
-          <div class="pane">
-            <webview id="main" src="landing.html">
-            <!--<webview id="settings" style="display:inline-flex; width:100%; height:99%" src="settings.html" nodeintegration>-->
-          </div>
+          </nav-group>
         </div>
-      </window-content>
-    </ph-window>
-    <script type="text/javascript" src="js/main.js"></script>
-  </body>
+        <div class="pane">
+          <webview id="main" src="landing.html">
+            <!--<webview id="settings" style="display:inline-flex; width:100%; height:99%" src="settings.html" nodeintegration>-->
+        </div>
+      </div>
+    </window-content>
+  </ph-window>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+
 </html>

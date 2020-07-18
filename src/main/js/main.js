@@ -1,8 +1,10 @@
 const ipc = require('electron').ipcRenderer;
+const photon = require('electron-photon');
+
 const webview = document.getElementById('main');
 const maindiv = document.getElementById('maindiv');
 const settdiv = document.getElementById('settdiv');
-const photon = require('electron-photon');
+
 function openPage(URL) {
     webview.src = URL;
     maindiv.style.display = "inherit";

@@ -1,7 +1,8 @@
-const { app, BrowserWindow, ipcMain, Menu, session } = require('electron')
+const { app, BrowserWindow, ipcMain, Menu } = require('electron')
 const path = require('path')
 
 var mainWindow = null;
+
 
 const menu = Menu.buildFromTemplate([
     {
@@ -57,6 +58,10 @@ const menu = Menu.buildFromTemplate([
                 }
             },
         ]
+    },
+    {
+        label: 'Info',
+        click: showinfo
     }
 ])
 
@@ -93,13 +98,6 @@ app.on('ready', function () {
     mainWindow.on('closed', () => {
         mainWindow = null;
     });
-
-    /*session
-        .defaultSession
-        .loadExtension(path.join(__dirname, "../myloft_ext"))
-        .then(({ id }) => {
-            console.log(id);
-        })*/
 });
 
 app.on('certificate-error', (event, webContents, url, error, certificate, callback) => {
@@ -121,3 +119,19 @@ ipcMain.on("settings", (event, arg) => {
         child.show()
     });
 })
+
+function showinfo() {
+    let child = new BrowserWindow({
+        parent: mainWindow,
+        modal: true,
+        height: 300,
+        show: false,
+        webPreferences: {
+            nodeIntegration: true,
+        }
+    });
+    child.loadURL('file://' + __dirname + '/info.html');
+    child.once('ready-to-show', () => {
+        child.show()
+    });
+}
