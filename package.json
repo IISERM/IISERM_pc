@@ -37,11 +37,11 @@
         }
     },
     "devDependencies": {
-        "electron": "^9.1.0",
-        "electron-builder": "^21.2.0"
+        "electron": "*",
+        "electron-builder": "^22.8.0"
     },
     "dependencies": {
-        "dpkg": "^1.0.0",
-        "electron-photon": "^1.1.6"
+        "dpkg": "*",
+        "electron-photon": "*"
     }
 }
