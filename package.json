@@ -40,7 +40,6 @@
         "electron": "*"
     },
     "dependencies": {
-        "dpkg": "*",
         "electron-photon": "*"
     }
 }
