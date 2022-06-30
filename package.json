@@ -37,8 +37,7 @@
         }
     },
     "devDependencies": {
-        "electron": "*",
-        "electron-builder": "^22.8.0"
+        "electron": "*"
     },
     "dependencies": {
         "dpkg": "*",
